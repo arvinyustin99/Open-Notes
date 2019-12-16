@@ -1,0 +1,26 @@
+Login
++ username
++ password
++ new?
+
+Register
++ email
++ username
++ password
++ password (re-type)
++ already has?
+
+Home
++ tiles notes
++ search
++ username
++ add notes
++ view (notes or lists)
+
+Note
++ back (Home)
++ Note Title
++ Note Content
+
+Note (Edit Mode)
++ Save (return Home)

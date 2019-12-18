@@ -15,7 +15,6 @@ Home
 + search
 + username
 + add notes
-+ view (notes or lists)
 
 Note
 + back (Home)
@@ -24,3 +23,18 @@ Note
 
 Note (Edit Mode)
 + Save (return Home)
+
+DATABASE
+user
++ userid
++ email
++ username
++ password
++ cache_session
+
+notes
++ userid
++ title
++ desc
++ date created
+

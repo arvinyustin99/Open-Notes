@@ -13,6 +13,7 @@ function submitLogin(){
 	var result = "";
 
 	xmlHTTP.onload = function(){
+		console.log(result);
 		result = JSON.parse(xmlHTTP.responseText);
 	}
 }

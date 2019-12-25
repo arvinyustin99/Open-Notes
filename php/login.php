@@ -3,13 +3,10 @@
 ?>
 
 <?php
-	$dbconn = new DatabaseAccess("localhost", "postgres", "postgres", "opennotes");
+	$dbconn = new DatabaseConnection("localhost", "adminON", "adminON", "opennotes");
 
 	$result = $dbconn->query("SELECT user_id, username, password FROM users WHERE username ='". $_POST['username']."'");
-?>
-	$_POST['username']
-	$_POST['password']
-	<?php
+
 	// If successful, the return will result only 1 row of data
 	$row = $result->fetch_assoc();
 
@@ -19,16 +16,16 @@
 
 	// Check whether the result yields not null
 	if ($result->num_rows > 0){
-		if (strcmp($result['password'], $_POST['password']) == 0){
+		if (strcmp($row['password'], $_POST['password']) == 0){
 			// Set cookie and cache
 			$results['status'] = 200;
-			$results['cookie'] = md5($results['user_id'].$results['password'].$results['username']);
+			$results['cookie'] = md5($row['user_id'].$row['password'].$row['username']);
 
 			// Insert the cookies into DB
-		$queryString = "INSERT INTO users (cookie) VALUES (".$results['cookie'].") WHERE user_id = '";
-		$queryString .= $result['user_id'];
+		$queryString = "UPDATE users SET cookie = '".$results['cookie']."' WHERE user_id = '";
+		$queryString .= $row['user_id'];
 		$queryString .= "' AND password = '";
-		$queryString .= $result['password'];
+		$queryString .= $row['password'];
 		$queryString .= "'";
 		$dbconn->query($queryString);
 		}

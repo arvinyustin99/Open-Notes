@@ -8,11 +8,11 @@
 
 		public function __construct($servername, $username, $pass, $db){
 			$this->username = $username;
-			$this->pass = $password;
+			$this->pass = $pass;
 			$this->servername = $servername;
 			$this->dbname = $db;
 
-			$this->conn = new PDO("pgsql:host=".$this->servername."; dbname=".$this->dbname, $this->username, $this->password);
+			$this->conn = new mysqli($this->servername, $this->username, $this->pass, $this->dbname);
 			$this->conn->set_charset('UTF-8');
 
 			if ($this->conn->connect_error){

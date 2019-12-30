@@ -3,6 +3,7 @@
 <head>
 	<link href="../bootstrap-4.3.1-dist/css/bootstrap.css" media="all" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/topbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/edit.css">
 	<title>Edit Note</title>
 </head>
 <body>
@@ -24,14 +25,12 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="container">
-		<div class="return-home">
-			<input type="button" value="<"/>
-		</div>
+	<div class="edit-container">
+		<input type="button" class="return-home" value="<"/>
 		<div class="edit-area">
 			<form method="POST">
 				<input type="text" class="edit-title" name="title_input" placeholder="Title"/>
-				<input type="text" class="edit-content" name="content_input" placeholder="Content">
+				<textarea rows="10" class="edit-content" name="content_input" placeholder="Content"></textarea>
 			</form>
 		</div>
 	</div>

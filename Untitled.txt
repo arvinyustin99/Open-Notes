@@ -30,16 +30,44 @@ Note (Edit Mode)
 + Save (return Home)
 
 DATABASE
-user
-+ userid
+users
 + email
-+ username
 + password
-+ cache_session
++ username
++ user_id
++ cookie
+
+CREATE TABLE users(
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(20) UNIQUE NOT NULL,
+    email VARCHAR(30) UNIQUE NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    cookie CHAR(32)
+) ENGINE=INNODB;
 
 notes
-+ userid
++ notes_id
++ user_id
 + title
-+ desc
-+ date created
++ content
++ created_on
++ last_modified
 
+CREATE TABLE notes(
+    notes_id INT AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    title VARCHAR(64),
+    content TEXT,
+    created_on TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(notes_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+) ENGINE=INNODB;
+
+INSERT INTO notes
+(user_id, title, content)
+VALUES
+(1, "Admin's First Notes", "Loren Ipsum bla bla. Whatever, this is new and not tested yet"),
+(1, "Second Test", "Be sure and well aware of your surroundings"),
+(2, "Why Storm Pegasis?", "Because the creator is Beyblade hobbist"),
+(2, "Favourite Bey", "The creator's favourite beys are Pegasis' and L Drago's series");

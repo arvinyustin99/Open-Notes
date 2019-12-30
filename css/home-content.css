@@ -1,0 +1,134 @@
+.content, .new-note, .pagination{
+	width: 100%;
+	min-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	top: 60px;
+}
+
+.content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.new-note{
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	border: 3px solid #F7FFA9;
+
+	background-color: #F7FFA9;
+	color: #888888;
+	font-size: 25px;
+	transition: background-color 0.3s ease-out, border 0.3s ease-out, color 0.3s ease-out;
+
+	width: 100%;
+	padding: 10px 10px 10px 0px;
+	margin-bottom: 5px;
+}
+
+.new-note:hover{
+	color: #F7FFA9;
+	border: 3px solid #FFA728;
+	background-color: #FFA728;
+	transition: background-color 0.2s ease-in, border 0.2s ease-in, color 0.2s ease-in;
+}
+
+.new-note:active{
+	border: 3px solid #F7FFA9;
+	transition: border 0.05s ease;
+}
+
+.button-like{
+	color: white;
+	margin-left: 2px;
+	padding: 15px 23px;
+	background-color: #FFA728;
+}
+
+.tile{
+	margin: 5px 5px;
+	padding: 10px 10px;
+	cursor: pointer;
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	background-color: #F0FF5D;
+}
+
+.tile-title{
+	color: 	#222222;
+	font-size: 15px;
+
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: hidden;
+	max-width: 130px;
+}
+
+.tile-line{
+	display: block;
+	height: 1px;
+	border: none;
+	border-top: 1px solid #222222;
+	margin: 2px 0px;
+	padding: none;
+}
+
+.tile-content{
+	color: #555555;
+	font-size: 12px;
+}
+
+.no-select{
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+
+.pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#swipe-left, #swipe-right {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 120px;
+	border: none;
+	height: 50px;
+	width: 50px;
+
+	margin-left: 30px;
+	margin-right: 30px;
+	background-color: #5276AB;
+	border: 3px solid #5276AB;
+	transition: border 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+	color: #FFFFFF;
+	font-size: 25px;
+}
+
+#swipe-left:hover, #swipe-right:hover{
+	transition: background-color 0.2s ease;
+	background-color: #093C87;
+	border: 3px solid #093C87;
+	color: #F9FFBe;
+	transition: border 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+#swipe-left:active, #swipe-right:active{
+	border: 3px solid #FFA728;
+	transition: border 0.1s ease;
+}

@@ -34,8 +34,8 @@ body{
 }
 .orange {
 	color: #003B64;
-	border: solid 3px #F7FFA9;
-	background: #F7FFA9;
+	border: solid 3px #FFF200;
+	background: #FFF200;
 	transition: border 1s ease, background-color 1s ease, color 1s ease;
 }
 .orange:hover {

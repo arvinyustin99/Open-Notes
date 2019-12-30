@@ -1,0 +1,38 @@
+.pagination{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#swipe-left, #swipe-right {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 120px;
+	border: none;
+	height: 50px;
+	width: 50px;
+
+	margin-left: 30px;
+	margin-right: 30px;
+	background-color: #5276AB;
+	border: 3px solid #5276AB;
+	transition: border 0.5s ease, background-color 0.5s ease, color 0.5s ease;
+	color: #FFFFFF;
+	font-size: 25px;
+}
+
+#swipe-left:hover, #swipe-right:hover{
+	transition: background-color 0.2s ease;
+	background-color: #093C87;
+	border: 3px solid #093C87;
+	color: #F9FFBe;
+	transition: border 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+}
+
+#swipe-left:active, #swipe-right:active{
+	border: 3px solid #FFF200;
+	transition: border 0.1s ease;
+}

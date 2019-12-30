@@ -129,6 +129,6 @@
 }
 
 #swipe-left:active, #swipe-right:active{
-	border: 3px solid #FFA728;
+	border: 3px solid #FFF200;
 	transition: border 0.1s ease;
 }

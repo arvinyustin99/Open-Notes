@@ -1,9 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="../bootstrap-4.3.1-dist/css/bootstrap.css" media="all" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/topbar.css">
+	<link rel="stylesheet" type="text/css" href="../css/home-content.css">
 	<title>Open Notes</title>
 </head>
 <body>
-
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li id="nav-item logo">
+				<img
+					class="navbar-brand"
+					src="../opennotes_dark.png"
+					alt="OpenNotes logo"
+					height="50"
+				/>
+			</li>
+			<li id=" nav-item find-bar">
+				<input type="text" name="searchString" id="search-input" placeholder="find your notes here"/>
+			</li>
+			<li class="nav-item">
+				<input type="button" class="logout orange" value="Logout"/>
+			</li>
+		</ul>
+	</nav>
+	<div class="content">
+		<div class="new-note">
+			<span class="button-like">+</span>
+			Add A New Note Here
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Aku Yang Lemah Karena Gak Ada Internet</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">nuhinahinuhina</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Kamu Siapa?</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">Manehyyty adasd asdas asdasd asdasd asd</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Kamu Siapa?</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">Manehyyty adasd asdas asdasd asdasd asd</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Kamu Siapa?</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">Manehyyty adasd asdas asdasd asdasd asd</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Kamu Siapa?</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">Manehyyty adasd asdas asdasd asdasd asd</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Raissa Graciela</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">iye, anak UKT, FSRD 17 kan</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Raissa Graciela</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">iye, anak UKT, FSRD 17 kan</span>
+		</div>
+		<div class="tile no-select">
+			<span class="tile-title">Raissa Graciela</span>
+			<hr class="tile-line"/>
+			<span class="tile-content">iye, anak UKT, FSRD 17 kan</span>
+		</div>
+	</div>
+	<div class="pagination">
+		<input type="button" id="swipe-left" value="<"/>
+		1 - 14 of 20 Notes
+		<input type="button" id="swipe-right" value=">"/>
+	</div>
 </body>
 </html>

@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/logreg.css">
+		<link rel="stylesheet" href="../css/login-register.css">
 		<title>Register</title>
 	</head>
-	<body>
-		<div class="form_container">
+	<body onload="(document, location, true)">
+		<form method ="POST" class="form_container" onsubmit="submitRegister(document, location); return false;">
 			<div class="form_subtitle">Register</div>
 		
 			<label for="email" class="form_label">Email</label>
-			<input type="text" placeholder="boom@gmail.com" class="form_input" id="inputEmail"/>
+			<input type="text" placeholder="boom@gmail.com" class="form_input" name="inputEmail"/>
 			<label class="wrong_msg" id="wrong_email">wrong email format</label>
 
 			<label for="username" class="form_label">Username</label>
-			<input type="text" placeholder="boom" class="form_input" id="inputUsername"/>
+			<input type="text" placeholder="boom" class="form_input" name="inputUsername"/>
 			<label class="wrong_msg" id="wrong_user">username already taken</label>
 
 			<label for="password" class="form_label">Password</label>
-			<input type="password" class="form_input" id="inputPassword"/>
+			<input type="password" class="form_input" name="inputPassword" id="inputPassword"/>
 			<label class="wrong_msg" id="wrong_pass">password must be at least 8 characters</label>
 
 			<label for="re-password" class="form_label">Re-type Password</label>
 			<input type="password" class="form_input" id="inputRePassword"/>
 			<label class="wrong_msg" id="wrong_repass">password not matched</label>
 			
-			<input type="button" onclick="" id="form_button" value="login"/>
+			<input type="submit" id="form_button" value="login"/>
 			<label id="new_user">Already have account? Login here</label>
-		</div>
+		</form>
 
 	</body>
+	<script src="../js/register.js"></script>
 </html>

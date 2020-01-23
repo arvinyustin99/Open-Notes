@@ -1,6 +1,4 @@
-document.getElementById("form_button").addEventListener("click", submitLogin, false);
-
-function submitLogin(){
+function submitLogin(doc, loc){
 	var xmlHTTP = new XMLHttpRequest();
 	xmlHTTP.open("POST", "../php/login.php", true);
 	var form = new FormData();
@@ -13,7 +11,13 @@ function submitLogin(){
 	var result = "";
 
 	xmlHTTP.onload = function(){
-		console.log(result);
 		result = JSON.parse(xmlHTTP.responseText);
+		if (result['status'] != null && result['status'] == 200){
+			loc.href = 'home.html';
+		}
+		else {
+			// error message here
+		}
+
 	}
 }

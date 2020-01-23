@@ -74,12 +74,11 @@ html, body, .form_container {
 
 	padding-bottom: 8px;
 	padding-left: 8px;
-
 	visibility: hidden;
 }
 
 #form_button {
-	background-color: #32beda;
+	background-color: #32BEDA;
 	border: none;
 	width: 100%;
 	color: white;
@@ -88,6 +87,17 @@ html, body, .form_container {
 	text-decoration: none;
 	display: inline-block;
 	font-size: 20px;
+	transition: background-color 0.4s ease;
+}
+
+#form_button:hover{
+	background-color: #2DABC4;
+	transition: background-color 0.25s ease;
+}
+
+#form_button:clicked{
+	background-color: #238598;
+	transition: background-color 0.25s ease;
 }
 
 #register {

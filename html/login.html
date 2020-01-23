@@ -10,7 +10,7 @@
 				Login to Open Notes
 			</div>
 			<div>
-				<form method="POST" action="../php/login.php">
+				<form method="POST" onsubmit="submitLogin(document, location)">
 					<label for="username" class="form_label">Username</label>
 					<br/>
 					<input type="text" name="username" placeholder="boom" class="form_input" id="inputUsername"></input>
@@ -19,7 +19,7 @@
 					<label for="password" class="form_label">Password</label>
 					<br/>
 					<input type="password" name="password" id="inputPassword" class="form_input"></input>
-					<label class="wrong_msg" id="wrong_user">invalid username or password</label>
+					<label class="wrong_msg" id="wrong_user">Invalid username or password</label>
 
 					<input type="submit" id="form_button" value="login"/>
 				</form>

@@ -28,6 +28,7 @@
 		$queryString .= $row['password'];
 		$queryString .= "'";
 		$dbconn->query($queryString);
+
 		}
 		else{
 			// invalid password given username
@@ -40,4 +41,5 @@
 	}
 	$results = json_encode($results);
 	echo $results;
+
 ?>

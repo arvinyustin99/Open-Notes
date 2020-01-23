@@ -9,27 +9,42 @@ var inputUsername = document.getElementsByName("inputUsername")[0];
 var inputRePass = document.getElementById("inputRePassword");
 var inputPass = document.getElementById("inputPassword");
 
-function validateUser(attr){
+var accepted = true;
+
+function validateUser(type, attr, border, acc){
 	var xmlHTTP = new XMLHttpRequest();
 	xmlHTTP.open("POST", "../php/register.php", true);
 	var form = new FormData();
 	form.append("request_code", 1);
+	form.append("type", type);
 	form.append("attribute", attr);
-	form.append("username", document.getElementsByName("inputUsername")[0].value);
 
 	xmlHTTP.send(form);
-
+	var result = "";
 	// response from back-end
-
+	xmlHTTP.onload = function(){
+		result = JSON.parse(xmlHTTP.responseText);
+		
+		if (result['status'] != 200) {
+			border.style.borderColor = "#FF3232";
+			acc = acc & false;
+		}
+	}
 }
 
 
-function validatePassword(){
-	return (inputPass.value.length > 8 && inputPass.value.length < 20);
+function validatePassword(acc){
+	if (inputPass.value.length < 8 || inputPass.value.length > 20){
+		inputPass.style.borderColor = "#FF3232";
+		acc = acc & false;
+	}
 }
 
-function validateRetypePassword(){
-	return (inputPass === inputRePass);
+function validateRetypePassword(acc){
+	if (inputPass.value != inputRePass.value){
+		inputRePass.style.borderColor = "#FF3232";
+		acc = acc & false;
+	}
 }
 
 function submitRegister(doc, loc){
@@ -37,18 +52,12 @@ function submitRegister(doc, loc){
 	inputRePass.style.borderColor = "#DDDDDD";
 	inputEmail.style.borderColor = "#DDDDDD";
 	inputUsername.style.borderColor = "#DDDDDD";
-
-	
-	if (!validatePassword()){
-		inputPass.style.borderColor = "#FF3232";
-		alert("password length must be more than 8");
-	}
-	else if (!validateRetypePassword()){
-		inputRePass.style.borderColor = "#FF3232";
-		alert("password mismatch");
-	}
-	else{
-
+	accepted = true;
+	validateUser("email", inputEmail.value, inputEmail, accepted);
+	validateUser("username", inputUsername.value, inputUsername, accepted);
+	validatePassword(accepted);
+	validateRetypePassword(accepted);
+	if (accepted){
 		var xmlHTTP = new XMLHttpRequest();
 		xmlHTTP.open("POST", "../php/register.php", true);
 		var form = new FormData();
@@ -60,6 +69,15 @@ function submitRegister(doc, loc){
 		xmlHTTP.send(form);
 
 		//response from back-end
+		xmlHTTP.onload = function(){
+			var result = JSON.parse(xmlHTTP.responseText);
+			if (result['status'] == 200){
+				loc.href = "home.html";
+			}
+			else{
+				loc.href = "register.html";
+			}
+		}
 	}
 
 }
